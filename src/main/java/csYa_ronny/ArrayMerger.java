@@ -2,8 +2,21 @@ package csYa_ronny;
 
 public class ArrayMerger {
     public static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
-        // TODO: Implement the logic to merge two sorted arrays
-        return new int[] {};  // Return an empty array by default
+        int arr1index=0;
+        int arr2index=0;
+        int index=0;
+        int[] arr=new int[arr1.length+arr2.length];
+        while(index<=arr1.length+arr2.length) {
+            if (arr1[arr1index] < arr2[arr2index]) {
+                arr[index] = arr1[arr1index];
+                arr1index++;
+            } else {
+                arr[index] = arr[arr2index];
+                arr2index++;
+            }
+            index++;
+        }
+        return arr;
     }
 
     public static void main(String[] args) {
